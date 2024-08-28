@@ -1,36 +1,7 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, 
 а так же их изменения в зависимости от ширины устройства */
 
-@media (prefers-color-scheme: light) {
-  :root {
-    --main-font-family: Inter, sans-serif;
-    --fantasy-font-family: "Press Start 2P", sans-serif;
-    --text-color: #000;
-    --title-font-weight: "wght" 700;
-    --text-font-weight: "wght" 400;
-    --background-color: #fff;
-    --background-gradient: #d3d3d3;
-    --background-color-start: #e7e7e7;
-    --background-color-end: #1a1a1a;
-    --text-color-disabled: rgb(0, 0, 0, 0.6);
-    --accent-color: rgb(255, 0, 0, 1);
-    --button-text-color: #fff;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --main-font-family: Inter, sans-serif;
-    --fantasy-font-family: "Press Start 2P", sans-serif;
-    --text-color: #00cc14;
-    --title-font-weight: "wght" 785;
-    --text-font-weight: "wght" 465;
-    --background-color: #000;
-    --background-gradient: #000;
-    --background-color-start: #007f0c;
-    --background-color-end: #004306;
-    --text-color-disabled: rgb(0, 204, 20, 0.6);
-    --accent-color: rgb(255, 0, 0, 1);
-    --button-text-color: #00cc14;
-  }
+:root {
+  --main-font-family: Inter, sans-serif;
+  --fantasy-font-family: "Press Start 2P", fantasy;
 }

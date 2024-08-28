@@ -23,7 +23,7 @@
   background: repeating-linear-gradient(
       90deg,
       var(--background-gradient),
-      var(--background-color) 2px,
+      var(--background-gradient) 2px,
       transparent 2px,
       transparent 4px
     ),
@@ -43,13 +43,13 @@
   background-size: cover;
 }
 
-header {
+.header {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 100px auto 100px;
   background-color: var(--background-color);
-  border: 3px solid var(--text-color);
+  border: 2px solid var(--text-color);
 }
 
 .header__title-large {
@@ -95,14 +95,10 @@ header {
   height: 2px;
   background-color: var(--text-color-disabled);
   content: "";
-  transition: width 0.3s ease-out;
+  transition: width 0.3s ease;
 }
 
 .theme-menu__button:focus-visible:after {
-  width: 85%;
-}
-
-.theme-menu__button:focus:after {
   width: 85%;
 }
 
@@ -116,7 +112,7 @@ header {
   content: "▶";
   position: absolute;
   color: var(--text-color-disabled);
-  animation: moving 0.5s infinite ease-in-out reverse;
+  animation: moving 0.5s infinite ease-in-out alternate;
   inset-inline-start: -15px;
 }
 
@@ -136,11 +132,11 @@ header {
 .card__title {
   background-color: var(--background-color);
   font-size: 18px;
-  padding: 4px 10px;
-  font-variation-settings: var(--title-font-weight);
-  border-top: 3px solid var(--text-color);
-  border-right: 3px solid var(--text-color);
-  border-left: 3px solid var(--text-color);
+  padding: 4.5px 10px;
+  font-variation-settings: "wght" var(--title-font-weight);
+  border-top: 2px solid var(--text-color);
+  border-right: 2px solid var(--text-color);
+  border-left: 2px solid var(--text-color);
 }
 
 .card__image {
@@ -153,7 +149,7 @@ header {
 .card__image-container {
   overflow: hidden;
   position: relative;
-  border: 3px solid var(--text-color);
+  border: 2px solid var(--text-color);
 }
 
 .filter__sepia {
@@ -205,16 +201,17 @@ header {
 }
 
 .card__text-container {
-  padding: 24px 24px 25px 25px;
-  margin-bottom: 50px;
+  padding: 25px 25.5px 25px 25px;
+  margin-block-end: 50px;
   font-size: 18px;
   display: flex;
   flex-direction: column;
   gap: 26px;
   background-color: var(--background-color);
-  border-right: 3px solid var(--text-color);
-  border-left: 3px solid var(--text-color);
-  border-bottom: 3px solid var(--text-color);
+  border-right: 2px solid var(--text-color);
+  border-left: 2px solid var(--text-color);
+  border-bottom: 2px solid var(--text-color);
+  font-variation-settings: "wght" var(--text-font-weight);
 }
 
 .card__like-button-container {
@@ -232,61 +229,6 @@ header {
   cursor: pointer;
   outline: 1px solid transparent;
   outline-offset: 1px;
-
-  .like-icon {
-    .core {
-      fill: var(--background-color);
-      transition: fill 0.3s 0.03s linear;
-    }
-    .main-body {
-      fill: var(--background-color);
-      transition: fill 0.3s linear;
-    }
-    .contour {
-      fill: var(--text-color);
-    }
-    .sparks {
-      fill: var(--background-color);
-    }
-  }
-
-  .like-icon.is-liked {
-    animation: scale-icon 0.3s 0.1s ease-in reverse;
-    .sparks {
-      animation: accent-sparks 0.3s 0.3s ease-in reverse;
-    }
-    .contour {
-      fill: var(--accent-color);
-    }
-    .main-body {
-      fill: var(--accent-color);
-    }
-    .core {
-      fill: var(--accent-color);
-    }
-  }
-
-  .like-icon.is-liked:hover {
-    .main-body {
-      fill: var(--accent-color);
-    }
-    .core {
-      fill: var(--accent-color);
-    }
-  }
-}
-
-.card__icon-button:hover {
-  .like-icon {
-    .core {
-      fill: var(--text-color);
-      transition: fill 0.3s linear;
-    }
-    .main-body {
-      fill: var(--text-color);
-      transition: fill 0.3s 0.05s linear;
-    }
-  }
 }
 
 .card__icon-button:focus {
@@ -297,19 +239,6 @@ header {
   outline: 2px solid var(--text-color);
 }
 
-.card__icon-button:hover {
-  .like-icon {
-    .core {
-      fill: var(--text-color);
-      transition: fill 0.3s linear;
-    }
-    .main-body {
-      fill: var(--text-color);
-      transition: fill 0.3s 0.05s linear;
-    }
-  }
-}
-
 .button {
   font-family: var(--fantasy-font-family);
   font-size: 14px;
@@ -318,7 +247,7 @@ header {
   background: none;
   border: 2px solid var(--text-color);
   cursor: pointer;
-  transition: 0.5s ease-in-out;
+  transition: 0.3s ease;
 }
 
 .card__like-button {
@@ -358,6 +287,7 @@ header {
   gap: 8px;
   align-items: center;
   background: var(--background-color);
+  margin-bottom: 103px;
 }
 
 .floppy-swg {
@@ -370,10 +300,6 @@ header {
 .button__text {
   color: var(--button-text-color);
   mix-blend-mode: difference;
-}
-
-.footer {
-  margin-bottom: 103px;
 }
 
 .floppy-swg__dialog {
@@ -418,7 +344,7 @@ header {
 
 @media (width <= 380px) {
   .card__text-container {
-    padding-right: 25px;
+    padding-right: 26px;
     line-height: 1.18em;
   }
   .button__save {
@@ -427,9 +353,5 @@ header {
 
   .floppy-swg {
     width: 28px;
-  }
-
-  .image-label {
-    top: 6%;
   }
 }
